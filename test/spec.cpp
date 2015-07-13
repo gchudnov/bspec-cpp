@@ -1,5 +1,4 @@
 #include <gtest/gtest.h>
-#include <gmock/gmock.h>
 
 #include "./common/true_spec.h"
 #include "./common/false_spec.h"
