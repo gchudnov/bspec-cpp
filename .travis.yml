@@ -4,6 +4,7 @@ matrix:
   include:
   - env: CLANG_VERSION=3.7
     os: linux
+    compiler: clang
     addons:
       apt:
         packages:
