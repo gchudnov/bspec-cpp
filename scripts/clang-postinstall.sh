@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -ex
+set -e
 
 # http://askubuntu.com/questions/309786/llvm-and-clang-installation-on-ubuntu
 sudo ln -sf -T /usr/bin/llvm-config-3.7 /usr/local/bin/llvm-config

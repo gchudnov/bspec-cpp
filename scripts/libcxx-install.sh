@@ -8,7 +8,7 @@ svn --quiet co http://llvm.org/svn/llvm-project/libcxx/trunk libcxx
 
 # libc++abi
 mkdir libcxxabi/build
-(cd libcxxabi/build && cmake .. -DLIBCXXABI_LIBCXX_PATH="$DIR/libcxx" -DLLVM_CONFIG=/usr/local/bin/llvm-config)
+(cd libcxxabi/build && cmake .. -DLIBCXXABI_LIBCXX_PATH="$DIR/libcxx")
 make -C libcxxabi/build -j2
 
 sudo cp -r libcxxabi/build/lib/libc++abi.so.1.0 /usr/lib/
