@@ -15,7 +15,7 @@ matrix:
         sources:
         - ubuntu-toolchain-r-test
         - llvm-toolchain-precise
-  - env: GCC_VERSION=5.1
+  - env: GCC_VERSION=5
     os: linux
     compiler: gcc
     addons:
