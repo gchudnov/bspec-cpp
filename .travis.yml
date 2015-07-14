@@ -8,6 +8,7 @@ matrix:
       apt:
         packages:
         - clang-3.7
+        - llvm-3.7-dev
         - wget
         - curl
         - unzip
