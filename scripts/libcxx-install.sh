@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -e
 
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
@@ -7,7 +8,7 @@ svn --quiet co http://llvm.org/svn/llvm-project/libcxx/trunk libcxx
 
 # libc++abi
 mkdir libcxxabi/build
-(cd libcxxabi/build && cmake .. -DLIBCXXABI_LIBCXX_PATH="$DIR/libcxx")
+(cd libcxxabi/build && cmake .. -DLIBCXXABI_LIBCXX_PATH="$DIR/libcxx" -DLLVM_CONFIG=/usr/local/bin/llvm-config)
 make -C libcxxabi/build -j2
 
 sudo cp -r libcxxabi/build/lib/libc++abi.so.1.0 /usr/lib/

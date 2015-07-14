@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -e
 
 curl -OL https://googletest.googlecode.com/files/gtest-1.7.0.zip
 unzip -q gtest-1.7.0.zip
