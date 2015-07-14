@@ -1,4 +1,4 @@
-# bspec-cpp
+# bspec-cpp [![Build Status](https://travis-ci.org/gchudnov/bspec-cpp.svg?branch=master)](https://travis-ci.org/gchudnov/bspec-cpp)
 
 > A C++ library for structuring business rules.
 
