@@ -34,10 +34,10 @@ before_install:
   fi
 - which $CXX
 - which $CC
-- sh scripts/cmake-install.sh
-- if [ -n "$CLANG_VERSION" ]; then sh scripts/clang-postinstall.sh; fi
-- if [ -n "$CLANG_VERSION" ]; then sh scripts/libcxx-install.sh; fi
-- sh scripts/gtest-install.sh
+- bash scripts/cmake-install.sh
+- if [ -n "$CLANG_VERSION" ]; then bash scripts/clang-postinstall.sh; fi
+- if [ -n "$CLANG_VERSION" ]; then bash scripts/libcxx-install.sh; fi
+- bash scripts/gtest-install.sh
 install:
 - export CXX_FLAGS=""
 - export CXX_LINKER_FLAGS=""
