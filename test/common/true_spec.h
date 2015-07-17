@@ -6,8 +6,10 @@
 class true_spec
   : public bspec::basic_spec<bool> {
 public:
-  true_spec* clone() const override {
-    return new true_spec;
+  using spec_type = basic_spec<bool>;
+  
+  std::shared_ptr<spec_type> clone() const override {
+    return std::make_shared<true_spec>();
   }
 
   bool is_satisfied_by(const bool& candidate) const override {

@@ -26,7 +26,7 @@ namespace bspec {
     virtual ~basic_spec() {
     }
 
-    virtual basic_spec* clone() const = 0;
+    virtual std::shared_ptr<basic_spec> clone() const = 0;
 
   public:
     virtual bool is_satisfied_by(const T& candidate) const = 0;
@@ -60,8 +60,8 @@ namespace bspec {
       : value_(other.clone()) {
     }
 
-    spec_type* clone() const override {
-      return new spec_holder(*value_);
+    std::shared_ptr<spec_type> clone() const override {
+      return std::make_shared<spec_holder>(*value_);
     }
 
   public:
@@ -87,8 +87,8 @@ namespace bspec {
       : wrapped_(other.clone()) {
     }
 
-    spec_type* clone() const override {
-      return new not_spec(*wrapped_);
+    std::shared_ptr<spec_type> clone() const override {
+      return std::make_shared<not_spec>(*wrapped_);
     }
 
     bool is_satisfied_by(const T& candidate) const override {
@@ -114,8 +114,8 @@ namespace bspec {
       : lhs_(x.clone()), rhs_(y.clone()) {
     }
 
-    spec_type* clone() const override {
-      return new and_spec(*lhs_, *rhs_);
+    std::shared_ptr<spec_type> clone() const override {
+      return std::make_shared<and_spec>(*lhs_, *rhs_);
     }
 
     bool is_satisfied_by(const T& candidate) const override {
@@ -141,8 +141,8 @@ namespace bspec {
       : lhs_(x.clone()), rhs_(y.clone()) {
     }
 
-    spec_type* clone() const override {
-      return new or_spec(*lhs_, *rhs_);
+    std::shared_ptr<spec_type> clone() const override {
+      return std::make_shared<or_spec>(*lhs_, *rhs_);
     }
 
     bool is_satisfied_by(const T& candidate) const override {
