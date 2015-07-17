@@ -18,25 +18,25 @@ To create a specification:
 
 ## API
 
-### .And(otherSpec)
+### .And(const basic_spec<T>&)
 the _and_ of a set of specifications is *true* if and only if all of its operands are *true*. 
 ```c++
 auto spec = spec1.And(spec2);
 ```
 
-### .Or(otherSpec)
+### .Or(const basic_spec<T>&)
 the _or_ of a set of specifications is *true* if and only if one or more of its operands is *true*
 ```c++
-autp spec = spec1.Or(spec2);
+auto spec = spec1.Or(spec2);
 ```
 
 ### .Not()
 _not_ negates the specification
 ```c++
-var spec = spec1.Not();
+auto spec = spec1.Not();
 ```
 
-### .is_satisfied_by(candidate)
+### .is_satisfied_by(const T&) : bool
 checks whether some _candidate_ object satisfies the specification.
 ```c++
   auto result = spec.is_satisfied_by(obj);
